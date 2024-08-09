@@ -170,9 +170,15 @@ hr {
   margin: 0;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
   width: 188px;
+  li {
+    padding: 0 14px 0;
+    margin: 0 -14px;
+    position: relative;
+  }
 }
 
 .dropdown:hover > .list {
@@ -203,6 +209,25 @@ hr {
 .list > li:hover > .list {
   display: block;
 }
+
 .dropdown > .list {
   top: 280%;
+}
+
+.list > li:last-child:after {
+  content: ">";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list > li:hover:last-child:after {
+  content: "<";
+}
+.list .list li:last-child::after {
+  content: " ";
+}
+.list > li > a {
+  text-align: left;
 }
